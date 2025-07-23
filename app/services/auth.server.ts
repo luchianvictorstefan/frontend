@@ -9,10 +9,6 @@ const sessionStorage = createCookieSessionStorage({
   },
 });
 
-// if (!process.env.LOGTO_ENDPOINT || !process.env.LOGTO_APP_ID || !process.env.LOGTO_APP_SECRET) {
-//   throw new Error('Missing Logto environment variables');
-// }
-
 export const logto = makeLogtoReactRouter(
   {
     endpoint: process.env.LOGTO_ENDPOINT || "",
