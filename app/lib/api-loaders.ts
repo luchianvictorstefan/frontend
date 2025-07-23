@@ -1,9 +1,9 @@
-import { apiClient } from './api-client';
 import { mapApiToFrontend } from './mappers';
+import { travelService } from './travel-service';
 
 export async function tripsLoader() {
   try {
-    const apiTrips = await apiClient.getAllTrips();
+    const apiTrips = await travelService.getAllTrips();
     return apiTrips.map(mapApiToFrontend);
   } catch (error) {
     console.error('Failed to load trips:', error);
@@ -19,7 +19,7 @@ export async function tripDetailLoader({ params }: { params: { tripId?: string }
   }
 
   try {
-    const apiTrip = await apiClient.getTripById(tripId);
+    const apiTrip = await travelService.getTripById(tripId);
     return mapApiToFrontend(apiTrip);
   } catch (error) {
     console.error('Failed to load trip:', error);
