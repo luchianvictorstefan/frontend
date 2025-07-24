@@ -46,7 +46,8 @@ export default function App() {
   return (
     <Provider store={store}>
       <Outlet />
-      </Provider>);
+    </Provider>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
